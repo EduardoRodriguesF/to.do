@@ -26,20 +26,16 @@ export function TaskList() {
 
   function handleToggleTaskCompletion(id: number) {
     tasks.forEach(task => {
-      console.log(task);
       if (task.id === id) {
         task.isComplete = !task.isComplete 
       }
       return task;
-    });
-
-    console.log(tasks)
+    })
   }
 
   function handleRemoveTask(id: number) {
-    // Remova uma task da listagem pelo ID
+    setTasks(tasks.filter(task => task.id != id));
   }
-
   return (
     <section className="task-list container">
       <header>
